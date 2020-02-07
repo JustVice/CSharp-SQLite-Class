@@ -8,9 +8,8 @@ using System.Data.SQLite;
 using System.Data;
 ```
 
-`System.Data.SQLite` must be installed through NuGet. Follow the example below to install:
+`System.Data.SQLite` must be installed through NuGet.
 
-GIF EXAMPLE PLACEHOLDER.
 
 Usage
 -----
@@ -36,7 +35,7 @@ SQLite sqlite = new SQLite(sQLite_database_path);
 Query method
 -----
 
-The `Query` method can be used to perform either `INSERT`, `UPDATE`, and `DELETE`. The usage is the following:
+The `Query` method can be used to perform either `CREATE TABLE`, `INSERT`, `UPDATE`, and `DELETE`. The usage is the following:
 
 To peform a query without a console output message:
 
@@ -48,7 +47,7 @@ To peform a query with a console output message:
 
 Examples of `CREATE TABLE`, `INSERT`, `UPDATE`, and `DELETE`.
 ```
-string sQLite_database_path = "C:\\Users\\JMV\\Desktop\\SQLITE DATABASE.db";
+string sQLite_database_path = "C:\\Users\\user\\Desktop\\SQLITE DATABASE.db";
 SQLite sqlite = new SQLite(sQLite_database_path);
 
 //Create database and first table.
@@ -86,3 +85,35 @@ Query successful.
 
 Fetch method
 -----
+
+The `fetch` method will return a DataSet object to store all the data 'fetched' from the query.
+
+```
+//Fetch query example.
+DataSet ds = sqlite.Fetch("SELECT * FROM USER");
+for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+{
+Console.Write("User id: " + ds.Tables[0].Rows[i]["id"].ToString());
+Console.Write(". Username: " + ds.Tables[0].Rows[i]["user_name"].ToString());
+Console.Write(". role: " + ds.Tables[0].Rows[i]["role"].ToString());
+Console.WriteLine("");
+}
+```
+
+Console output result:
+
+```
+Fetch query completed.
+```
+
+For loop `Console.Write` output:
+
+```
+User id: 1. Username: user0. role: 1
+User id: 2. Username: user1. role: 2
+User id: 3. Username: user2. role: 1
+User id: 4. Username: user3. role: 3
+User id: 5. Username: user4. role: 1
+```
+
+Happy Coding!! - VICE <3 .
