@@ -27,9 +27,18 @@ To create a database you need to create a `SQLite` object and to perform any kin
 
 Here is an example of creating a SQLite object:
 
+Option 1
+
 ```
 string sqlite_database_path = "C:\\Users\\user\\Desktop\\SQLITEDATABASE.db";
 SQLite sqlite = new SQLite(sqlite_database_path);
+```
+
+Option 2
+
+```
+SQLite sqlite = new SQLite();
+sqlite.sqlite_database_path = "C:\\Users\\user\\Desktop\\SQLITEDATABASE.db";
 ```
 
 Query method

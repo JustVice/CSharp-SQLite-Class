@@ -9,14 +9,14 @@ namespace namespaceapp
         #region DOCUMENTATION
         /////////////////////////////////////////////////////////////
         //-----------------------------------------------------------------
-        //SQLITE C# CLASS TEMPLATE BY VICE. Version 1.0 - Date: 2020/02/06
+        //SQLITE C# CLASS TEMPLATE BY VICE. Version 1.1 - Date: 2020/02/06
         //-----------------------------------------------------------------
         //System.Data.SQLite library must be get from NuGet.
         /////////////////////////////////////////////////////////////
         #endregion
 
         private SQLiteConnection sqlite_conn;
-        private string sqlite_database_path;
+        public string sqlite_database_path;
 
         public SQLite(string SQLite_database_path)
         {
@@ -33,6 +33,11 @@ namespace namespaceapp
                 "Version = 3; " +
                 "New = True; " +
                 "Compress = True; ");
+        }
+
+        public SQLite()
+        {
+
         }
 
         #region QUERY METHODS
