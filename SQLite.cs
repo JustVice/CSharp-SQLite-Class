@@ -4,7 +4,7 @@ using System.Data;
 
 namespace namespaceapp
 {
-    class SQLite
+    public class SQLite
     {
         #region DOCUMENTATION
         /////////////////////////////////////////////////////////////
