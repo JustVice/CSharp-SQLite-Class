@@ -28,8 +28,8 @@ To create a database you need to create a `SQLite` object and to perform any kin
 Here is an example of creating a SQLite object:
 
 ```
-string sQLite_database_path = "C:\\Users\\user\\Desktop\\SQLITEDATABASE.db";
-SQLite sqlite = new SQLite(sQLite_database_path);
+string sqlite_database_path = "C:\\Users\\user\\Desktop\\SQLITEDATABASE.db";
+SQLite sqlite = new SQLite(sqlite_database_path);
 ```
 
 Query method
@@ -47,8 +47,8 @@ To peform a query with a console output message:
 
 Examples of `CREATE TABLE`, `INSERT`, `UPDATE`, and `DELETE`.
 ```
-string sQLite_database_path = "C:\\Users\\user\\Desktop\\SQLITE DATABASE.db";
-SQLite sqlite = new SQLite(sQLite_database_path);
+string sqlite_database_path = "C:\\Users\\user\\Desktop\\SQLITE DATABASE.db";
+SQLite sqlite = new SQLite(sqlite_database_path);
 
 //Create database and first table.
 sqlite.Query("CREATE TABLE 'USER' " +

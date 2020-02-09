@@ -2,35 +2,34 @@
 using System.Data.SQLite;
 using System.Data;
 
-namespace <name_space>
+namespace namespaceapp
 {
-    public class SQLite
+    class SQLite
     {
         #region DOCUMENTATION
-        ///////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////
         //-----------------------------------------------------------------
-        //SQLITE C# CLASS TEMPLATE BY VICE. Version 1.0 - Date: 2020/02/07
-        //License: MIT.
+        //SQLITE C# CLASS TEMPLATE BY VICE. Version 1.0 - Date: 2020/02/06
         //-----------------------------------------------------------------
         //System.Data.SQLite library must be get from NuGet.
-        ///////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////
         #endregion
 
         private SQLiteConnection sqlite_conn;
-        private string sQLite_database_path;
+        private string sqlite_database_path;
 
         public SQLite(string SQLite_database_path)
         {
             if (SQLite_database_path_contains_dot_db(SQLite_database_path))
             {
-                this.sQLite_database_path = SQLite_database_path;
+                this.sqlite_database_path = SQLite_database_path;
             }
             else
             {
-                this.sQLite_database_path = SQLite_database_path + ".db";
+                this.sqlite_database_path = SQLite_database_path + ".db";
             }
             this.sqlite_conn = new SQLiteConnection(
-                "Data Source= " + this.sQLite_database_path + "; " +
+                "Data Source= " + this.sqlite_database_path + "; " +
                 "Version = 3; " +
                 "New = True; " +
                 "Compress = True; ");
@@ -144,5 +143,6 @@ namespace <name_space>
         {
             return SQLite_database_path.Contains(".db");
         }
+
     }
 }
